@@ -100,10 +100,10 @@ for ii in range(n_sur):
     if mat not in mats and mat!= '' and mat.casefold() != 'mirror': 
         # Append material to the list
         mats.append(mat)
-        
+
         # Surface material catalog
         cat = sur.MaterialCatalog
-    
+
         # Create a path to the catalog file
         cat_path = os.path.join(cat_folder, cat)
 
@@ -150,7 +150,7 @@ for ii in range(n_sur):
                 
                 # Relative cost times scale factor
                 cost.append(scal * float(od_line[1]))
-                if cost[-1] < 0:
+                if cost[-1] <= 0:
                     cost[-1] = scal
         
 # Plot results
